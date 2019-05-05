@@ -1,0 +1,16 @@
+#filter_sports {
+  width: 100%;
+  padding: 10px;
+}
+
+#sport-list {
+  margin: 0;
+  padding: 0;
+}
+
+#sport-list li {
+  list-style: none;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px crimson;
+}
