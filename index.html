@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html xmlns:table-alignment="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale =1">
+    <!--    Title here is the tab attribute that pops up on a new tab-->
+    <title>Sport picker</title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        #table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-size: 18px;
+        }
+
+        #myTable tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+        #table a.head2, #table a:hover {
+            background-color: #f1f1f1;
+        }
+
+        #table b, #table b {
+            text-align: left;
+            padding: 12px;
+        }
+
+        #table c, #table c {
+            text-align: left;
+            padding: 12px;
+        }
+
+        #filter_sports {
+            width: 100%;
+            padding: 10px;
+        }
+
+        #input {
+            background-image: none;
+            background-position: 10px 10px;
+            background-repeat: no repeat;
+            width: 100%;
+            font-size: 16px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+
+        }
+
+        #sport-list {
+            margin: 0;
+            padding: 0;
+        }
+
+        #sport-list li {
+          /* TODO: CREATE STYLE FOR VERTICAL list */
+            list-style: none;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid crimson;
+        }
+
+        #header {
+            border: #49b2b0;
+        }
+
+        .head1 {
+            font-size: 40px;
+            color: #b20004;
+            font-weight: initial;
+            align:;
+        }
+
+        .head2 {
+            font-size: 17px;
+            margin-left: 10px;
+            margin-bottom: 15px;
+        }
+
+        body {
+            margin: 0 auto;
+            background-position: center;
+            background-size: contain;
+        }
+
+        .menu {
+            position: sticky;
+            top: 0;
+            background-color: cornflowerblue;
+            padding: 10px 0px 10px 0px;
+            color: white;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .menu a {
+            float: left;
+            color: white;
+            text-align: left;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        list {
+            right: auto;
+            float: right;
+        }
+
+        .body_sec {
+            margin-left: 20px;
+        }
+
+        #footer {
+            border: #1a237e;
+            width: 100%;
+            bottom: 0px;
+            background-color: #000;
+            color: #fff;
+            position: bottom;
+            padding-top: 20px;
+            padding-bottom: 50px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+  <img src="img\Cover picture.png" alt="cover <picture>
+  </picture>" style= "width:300px"; height:"400px"; class= "center">
+    <!-- <div class="head2"> A search for your favorite Sport!</div> -->
+</header>
+
+<! Menu Navigation Bar -->
+<div class="menu">
+    <a href="#home"> HOME</a>
+    <a href="#news"> NEWS</a>
+    <a href="#notification"> NOTIFICATIONS</a>
+    <div class="menu-log"></div>
+    <a href="#login">LOGIN</a>
+</div>
+
+<input type="text"
+       placeholder="Search for your sport"
+       id="filter_sport"
+       onkeyup="myFunction()" placeholder+>
+
+
+<script>
+    ul = document.getElementById("sport-list");
+
+    var render_lists = function (lists) {
+        var li = "";
+        for (index in lists) {
+            li += "<li>" + lists[index] + "</li>";
+        }
+        ul.innerHTML = li;
+    };
+    render_lists(sport);
+
+
+    input = document.getElementById('filter_sport');
+
+    /* var filterSport = function (event) {
+          keyword = input.value.toLowerCase();
+          filtered_sport = sport.filter(funtion(sport);
+          {
+              sport = sport.toLowerCase();
+              return sport.indexOf(keyword) > -1;
+          });
+          render_lists(filtered_sport);
+      };
+      */
+    input.addEventListener('keyup', filterSport);
+
+
+    function isFunction() {
+        var input, filter, table, a, b, i, txtVal;
+        input = document.getElementById("input");
+        filter = input.value.toUppercase();
+        table = document.getElementById("table");
+        a = table.getElementsByTagName("a");
+        for (i = 0; i < a.lenth; i++) {
+            b = a[i].getElementsByTagName("a")[0];
+            if (b) {
+                txtVal = b.textContent || b.innerText;
+                if (txtVal.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = '';
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+<!-- Body section -->
+<div class="body_sec">
+    <!--    <datalist style="align-items: list"/>-->
+
+    <table id="table">
+        <table-alignment:template onkeyup="isFunction()">
+            <!--align-->
+        </table-alignment:template>
+
+        <a class="head2">
+            <b style="text-indent: hanging">Sport</b>
+        </a>
+        <a>
+            <b>Lacrosse</b>
+            <b>Soccer</b>
+            <b>Swimming</b>
+            <b>Baseball</b>
+            <b>Football</b>
+            <b>Cycling</b>
+            <b>Fishing</b>
+            <b>Hunting</b>
+            <b>Golf</b>
+            <b>Gymnastics</b>
+            <b>Wrestling</b>
+            <b>Cross Country</b>
+            <b>Hockey</b>
+            <b>Weightlifting</b>
+            <b>Motor Sports</b>
+            <b>Skating</b>
+        </a>
+    </table>
+
+    <!-- <ul id="sport_list">
+    </ul> -->
+</div>
+
+
+<!--<link target="_top"/>-->
+
+<!--Footer Section -->
+<footer>Footer Section</footer>
+
+</body>
+
+</html>
